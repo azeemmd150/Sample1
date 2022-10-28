@@ -2,4 +2,4 @@ version: 0.2
 phases:
     build:
         commands:
-            - docker run --rm -v $(pwd)/sql:/flyway/sql -v $(pwd)/conf:/flyway/conf flyway/flyway migrate
+            - docker run flyway/flyway migrate
