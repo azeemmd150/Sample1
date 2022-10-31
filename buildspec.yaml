@@ -2,8 +2,8 @@ version: 0.2
 phases:
     install:
        commands:
-           - aws secretsmanager get-secret-value --secret-id /dev/mysql | jq --raw-output '.SecureString' > creds.json
-           - username=$(jq -r .username creds.json) && password=(jq -r .password creds.json) && rm creds.json
+           - aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:us-east-2:435429793199:secret:dev/mysql-80KqwW | jq --raw-output '.SecureString' > creds.json
+           - username=$(jq -r .username creds.json) && password=$(jq -r .password creds.json) && rm creds.json
     build:
        commands:
            - docker run --rm -v $(pwd)/sql:/flyway/sql -v $(pwd)/conf:/flyway/conf flyway/flyway -url=$url -user=$username -password=$password migrate 
