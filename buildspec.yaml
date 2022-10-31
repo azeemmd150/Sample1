@@ -2,6 +2,6 @@ version: 0.2
 phases:
     build:
         commands:
-            - wget -qO- https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/9.6.0/flyway-commandline-9.6.0-linux-x64.tar.gz | tar xvz && sudo ln -s `pwd`/flyway-9.6.0/flyway /usr/local/bin 
+             - wget -qO- https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/9.6.0/flyway-commandline-9.6.0-linux-x64.tar.gz | tar xvz && sudo ln -s `pwd`/flyway-9.6.0/flyway /usr/local/bin
             - flyway -enterprise migrate
 
