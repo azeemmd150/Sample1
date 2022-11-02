@@ -1,6 +1,13 @@
 version: 0.2
+env:
+parameter-store:
+DB_HOST:/DB/HOST
+DB_USERNAME:/DB/USERNAME
+DB_PASSWORD:/DB/PASSWORD
+
 phases:
     build:
         commands:
-            - docker run --rm -v $(pwd)/sql:/flyway/sql -v $(pwd)/conf:/flyway/conf flyway/flyway migrate
+            - docker run --rm -v $(pwd)/sql:/flyway/sql -v $(pwd)/conf:/flyway/conf flyway/flyway HOSTNAME=$DB_HOST -USERNAME=$DB_USERNAME -PASSWORD=$DB_PASSWORD migrate
+
 
