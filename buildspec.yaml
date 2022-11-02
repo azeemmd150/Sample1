@@ -1,4 +1,5 @@
 version: 0.2
+
 env:
 parameter-store:
   DB_HOST: "/DB/HOST"
