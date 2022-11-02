@@ -1,9 +1,9 @@
 version: 0.2
 env:
 parameter-store:
-DB_HOST:/DB/HOST
-DB_USERNAME:/DB/USERNAME
-DB_PASSWORD:/DB/PASSWORD
+DB_HOST: /DB/HOST
+DB_USERNAME: /DB/USERNAME
+DB_PASSWORD: /DB/PASSWORD
 
 phases:
     build:
